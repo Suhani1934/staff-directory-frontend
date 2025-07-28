@@ -1,0 +1,43 @@
+/* Navbar Custom Theme */
+.navbar-blue {
+  background-color: #003366;
+}
+
+.brand-text {
+  color: #FFD700 !important;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+.brand-text:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px #FFD700;
+}
+
+.btn-yellow {
+  background-color: #FFD700;
+  color: #003366;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  border: none;
+}
+.btn-yellow:hover {
+  background-color: #FFC107;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.nav-btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+.nav-btn:hover {
+  transform: scale(1.05);
+}
+
+.logout-btn:hover {
+  background-color: #ff4d4d;
+  color: #fff;
+  transform: scale(1.05);
+}

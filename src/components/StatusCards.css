@@ -1,0 +1,8 @@
+.status-card {
+  min-height: 120px;
+  transition: transform 0.2s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-5px);
+}
