@@ -9,7 +9,7 @@ export default function Home() {
   const [staff, setStaff] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/users/staff`).then((res) => {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}users/staff`).then((res) => {
       setStaff(res.data);
     });
   }, []);

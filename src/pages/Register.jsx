@@ -1,6 +1,7 @@
 // frontend/src/pages/Register.jsx
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
 import "./Register.css";
 
@@ -28,13 +29,18 @@ export default function Register() {
     Object.entries(form).forEach(([key, value]) => data.append(key, value));
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/users/register`, data, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}users/register`,
+        data,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      toast.success(res.data.message);
       navigate("/login");
     } catch (err) {
       console.error("Registration error:", err);
-      alert(err.response?.data?.message || "Registration failed");
+      toast.error(err.response?.data?.message || "Registration failed");
     }
   };
 

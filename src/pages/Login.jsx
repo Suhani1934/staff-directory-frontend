@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Login.css";
 
 export default function Login() {
@@ -14,11 +15,13 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/users/login`, form);
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}users/login`, form);
+
+      toast.success(res.data.message);
       localStorage.setItem("token", res.data.token);
       navigate("/");
     } catch (err) {
-      alert(err.response?.data?.message || "Login failed");
+      toast.error(err.response?.data?.message || "Login failed");
     }
   };
 
