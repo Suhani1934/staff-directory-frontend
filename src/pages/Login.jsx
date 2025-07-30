@@ -15,11 +15,16 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}users/login`, form);
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}users/login`,
+        form
+      );
 
-      toast.success(res.data.message);
-      localStorage.setItem("token", res.data.token);
-      navigate("/");
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+        toast.success("Login successful");
+        navigate("/faculty/profile");
+      }
     } catch (err) {
       toast.error(err.response?.data?.message || "Login failed");
     }
@@ -27,7 +32,10 @@ export default function Login() {
 
   return (
     <div className="login-page d-flex align-items-center justify-content-center vh-100 bg-light">
-      <div className="card login-card p-4 px-5 shadow-lg border-0 rounded-4" style={{ maxWidth: "400px", width: "100%" }}>
+      <div
+        className="card login-card p-4 px-5 shadow-lg border-0 rounded-4"
+        style={{ maxWidth: "400px", width: "100%" }}
+      >
         <h2 className="text-center mb-4 fw-bold text-primary">Staff Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -57,7 +65,10 @@ export default function Login() {
           </div>
           <div className="text-center">
             <span>Don't have an account? </span>
-            <Link to="/register" className="text-decoration-none text-primary fw-semibold">
+            <Link
+              to="/register"
+              className="text-decoration-none text-primary fw-semibold"
+            >
               Register
             </Link>
           </div>

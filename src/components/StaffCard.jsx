@@ -7,7 +7,7 @@ const StaffCard = ({ staff }) => {
     <Card className="staff-profile shadow border-0 mb-4">
       <Row className="g-0">
         {/* Left Sidebar */}
-        <Col md={4} className="text-white text-center d-flex flex-column justify-content-center align-items-center p-4 gradient-bg">
+        <Col md={4} className="text-black text-center d-flex flex-column justify-content-center align-items-center p-4 gradient-bg">
           <img
             src={staff.photo}
             alt={staff.name}
