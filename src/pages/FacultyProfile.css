@@ -1,29 +1,10 @@
-/* Professional theme colors */
+/* FacultyProfile.css */
 .profile-card {
-  border: none;
-  border-radius: 15px;
-  background: #ffffff;
-  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 1rem;
 }
 
 .profile-title {
-  color: #1e3a8a;
-  font-weight: bold;
-  border-bottom: 2px solid #f59e0b;
-  padding-bottom: 10px;
-}
-
-.btn-update {
-  background-color: #1e3a8a;
-  color: #fff;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: 0.3s ease;
-  border: none;
-}
-
-.btn-update:hover {
-  background-color: #f59e0b;
-  color: #1e3a8a;
+  color: #1d3557;
+  font-weight: 600;
 }
