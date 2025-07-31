@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import FacultyProfile from "./pages/FacultyProfile";
+import ChangePassword from "./pages/ChangePassword";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/faculty/profile" element={<FacultyProfile />} />
+          <Route path="/change-password" element={<ChangePassword />} />
         </Routes>
         {/* <Footer/> */}
       </BrowserRouter>

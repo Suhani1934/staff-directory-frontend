@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "./FacultyProfile.css"; // Custom styles
@@ -102,14 +103,21 @@ const FacultyProfile = () => {
               />
             </div>
 
-            <div className="text-center">
+            <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mt-4">
               <button
                 type="submit"
-                className="btn btn-primary px-4 py-2 fw-semibold rounded-pill shadow-sm mt-3"
+                className="btn btn-primary d-flex align-items-center gap-2 px-4 py-2 fw-semibold rounded-3 shadow"
                 style={{ backgroundColor: "#0d6efd", border: "none" }}
               >
-                <i className="bi bi-save me-2"></i>Update Profile
+                <i className="bi bi-save"></i> Update Profile
               </button>
+
+              <Link
+                to="/change-password"
+                className="btn btn-outline-secondary d-flex align-items-center gap-2 px-4 py-2 fw-semibold rounded-3 shadow-sm"
+              >
+                <i className="bi bi-shield-lock"></i> Change Password
+              </Link>
             </div>
           </form>
         </div>
