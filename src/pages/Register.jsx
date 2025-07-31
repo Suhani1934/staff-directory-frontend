@@ -23,8 +23,37 @@ export default function Register() {
     setForm({ ...form, [name]: files ? files[0] : value });
   };
 
+  const validateForm = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const contactRegex = /^[0-9]{10}$/;
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+    if (!emailRegex.test(form.email)) {
+      toast.error("Invalid email format");
+      return false;
+    }
+
+    if (!contactRegex.test(form.contact)) {
+      toast.error("Contact must be 10 digits");
+      return false;
+    }
+
+    if (!passwordRegex.test(form.password)) {
+      toast.error(
+        "Password must be 8+ characters, include upper, lower, number & special symbol"
+      );
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
+
     const data = new FormData();
     Object.entries(form).forEach(([key, value]) => data.append(key, value));
 
@@ -80,6 +109,7 @@ export default function Register() {
               placeholder="Contact Number"
               className="form-control form-control-lg"
               required
+              maxLength="10"
             />
           </div>
           <div className="mb-3">
