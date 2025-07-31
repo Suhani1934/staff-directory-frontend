@@ -7,13 +7,10 @@ import Login from "./pages/Login";
 import FacultyProfile from "./pages/FacultyProfile";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
-// import PrivateRoute from "./components/PrivateRoute";
 
 export default function App() {
   return (
     <div className="app-wrapper">
-      {" "}
-      {/* Important for layout fix */}
       <BrowserRouter>
         <Navbar />
         <ToastContainer position="bottom-left" autoClose={2000} />
@@ -23,6 +20,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/faculty/profile" element={<FacultyProfile />} />
         </Routes>
+        {/* <Footer/> */}
       </BrowserRouter>
     </div>
   );

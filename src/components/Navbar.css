@@ -1,43 +1,23 @@
-/* Navbar Custom Theme */
-.navbar-blue {
-  background-color: #003366;
+.custom-navbar {
+  background-color: #1e3a8a;
 }
 
-.brand-text {
-  color: #FFD700 !important;
-  font-size: 1.4rem;
-  transition: all 0.3s ease;
-}
-.brand-text:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 10px #FFD700;
-}
-
-.btn-yellow {
-  background-color: #FFD700;
-  color: #003366;
+.navbar .nav-link {
+  color: white !important;
   font-weight: 500;
-  transition: 0.3s ease-in-out;
-  border: none;
-}
-.btn-yellow:hover {
-  background-color: #FFC107;
-  color: #000;
-  transform: scale(1.05);
+  transition: all 0.2s ease;
 }
 
-.nav-btn {
-  border-radius: 20px;
-  padding: 6px 16px;
-  font-weight: 500;
-  transition: transform 0.3s ease;
-}
-.nav-btn:hover {
-  transform: scale(1.05);
+.navbar .nav-link:hover {
+  color: #fcd34d !important;
 }
 
-.logout-btn:hover {
-  background-color: #ff4d4d;
-  color: #fff;
-  transform: scale(1.05);
+.navbar .nav-link.active {
+  color: #f59e0b !important;
+  border-bottom: 2px solid #f59e0b;
+}
+
+.navbar-toggler .bi {
+  font-size: 1.8rem;
+  color: white;
 }
