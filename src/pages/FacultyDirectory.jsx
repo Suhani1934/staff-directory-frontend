@@ -19,7 +19,7 @@ const FacultyDirectory = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="text-center mb-4">Faculty Directory</h2>
+      <h2 className="text-center mb-4 text-primary fw-bold">Faculty Directory</h2>
       <div className="row">
         {facultyList.map((faculty) => (
           <div className="col-md-4 mb-4" key={faculty._id}>
