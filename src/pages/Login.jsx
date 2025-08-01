@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FacultyLogin from "../components/FacultyLogin";
 import AlumniLogin from "../components/AlumniLogin";
+import StudentLogin from "../components/StudentLogin"
 
 const Register = () => {
   const [userType, setUserType] = useState("");
@@ -20,6 +21,9 @@ const Register = () => {
           <button className="btn btn-secondary mx-2" onClick={() => handleSelection("alumni")}>
             Login as Alumni
           </button>
+          <button className="btn btn-secondary mx-2" onClick={() => handleSelection("student")}>
+            Login as Student
+          </button>
         </div>
       )}
 
@@ -32,6 +36,11 @@ const Register = () => {
       {userType === "alumni" && (
         <div className="mt-4">
           <AlumniLogin />
+        </div>
+      )}
+      {userType === "student" && (
+        <div className="mt-4">
+          <StudentLogin />
         </div>
       )}
     </div>

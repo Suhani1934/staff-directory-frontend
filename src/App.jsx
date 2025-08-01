@@ -12,6 +12,9 @@ import AlumniRegister from "./components/AlumniRegister";
 import FacultyRegister from "./components/FacultyRegister";
 import FacultyDirectory from "./pages/FacultyDirectory";
 import AlumniDirectory from "./pages/AlumniDirectory";
+import StudentRegister from "./components/StudentRegister";
+import StuentLogin from "./components/StudentLogin";
+import StudentDirectory from "./pages/StudentDirectory";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 
@@ -23,16 +26,28 @@ export default function App() {
         <ToastContainer position="bottom-left" autoClose={2000} />
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/faculty/register" element={<FacultyRegister />} />
+
+          {/* Login Forms */}
           <Route path="/faculty/login" element={<FacultyLogin />} />
-          <Route path="/faculty/profile" element={<FacultyProfile />} />
-          <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/alumni/login" element={<AlumniLogin />} />
+          <Route path="/students/login" element={<StuentLogin />} />
+
+          {/* Registration Forms */}
+          <Route path="/faculty/register" element={<FacultyRegister />} />
           <Route path="/alumni/register" element={<AlumniRegister />} />
+          <Route path="/students/register" element={<StudentRegister />} />
+
+          {/* Directory Pages */}
           <Route path="/faculty-directory" element={<FacultyDirectory />} />
           <Route path="/alumni-directory" element={<AlumniDirectory />} />
+          <Route path="/student-directory" element={<StudentDirectory />} />
+
+          {/* Profile Pages */}
+          <Route path="/faculty/profile" element={<FacultyProfile />} />
+          <Route path="/change-password" element={<ChangePassword />} />
         </Routes>
         {/* <Footer/> */}
       </BrowserRouter>

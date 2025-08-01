@@ -1,40 +1,9 @@
-.text-blue {
-  color: #003366;
-}
-
-.staff-card {
-  border: 2px solid #003366;
-  border-radius: 16px;
+.transition-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.total-staff-card {
-  max-width: 250px;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, #fff7e6, #ffe7a3);
+  background-color: #ffffff;
 }
 
-.staff-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 15px rgba(0, 51, 102, 0.3);
-}
-
-.card-img-container {
-  overflow: hidden;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-  height: 300px;
-}
-
-.staff-photo {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  transition: transform 0.5s ease;
-}
-
-.staff-card:hover .staff-photo {
-  transform: scale(1.05);
-}
-.card {
-  border-radius: 1rem;
+.transition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
