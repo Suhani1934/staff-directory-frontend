@@ -162,7 +162,7 @@ export default function AlumniRegister() {
             <small className="text-muted">
               Already registered?{" "}
               <Link
-                to="/login"
+                to="/alumni/login"
                 className="text-decoration-none text-primary fw-semibold"
               >
                 Login here
