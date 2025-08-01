@@ -41,7 +41,7 @@ const AlumniDirectory = () => {
                   <br />
                   <strong>Designation:</strong> {alumni.designation}
                   <br />
-                  <strong>Company:</strong> {alumni.company}
+                  <strong>Company:</strong> {alumni.organization}
                   <br />
                   <strong>Location:</strong> {alumni.location}
                   <br />
