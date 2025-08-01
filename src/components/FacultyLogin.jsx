@@ -35,7 +35,7 @@ export default function Login() {
         className="card login-card p-4 px-5 shadow-lg border-0 rounded-4"
         style={{ maxWidth: "400px", width: "100%" }}
       >
-        <h2 className="text-center mb-4 fw-bold text-primary">Staff Login</h2>
+        <h2 className="text-center mb-4 fw-bold text-primary">Faculty Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Email</label>

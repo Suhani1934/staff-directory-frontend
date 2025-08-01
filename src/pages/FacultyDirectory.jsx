@@ -18,25 +18,38 @@ const FacultyDirectory = () => {
   }, []);
 
   return (
-    <div className="container mt-4">
-      <h2 className="text-center mb-4 text-primary fw-bold">Faculty Directory</h2>
-      <div className="row">
+    <div className="container py-5" style={{ backgroundColor: "#f8fafc" }}>
+      <h2 className="text-center mb-5 fw-bold" style={{ color: "#1e293b" }}>
+        Faculty Directory
+      </h2>
+
+      <div className="row g-4">
         {facultyList.map((faculty) => (
-          <div className="col-md-4 mb-4" key={faculty._id}>
-            <div className="card h-100 shadow-sm">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={faculty._id}>
+            <div
+              className="card border-0 shadow-sm h-100"
+              style={{ backgroundColor: "#ffffff", borderRadius: "1rem" }}
+            >
               <img
                 src={faculty.photo}
                 className="card-img-top"
                 alt={faculty.name}
-                style={{ height: "250px", objectFit: "cover" }}
+                style={{
+                  height: "220px",
+                  objectFit: "cover",
+                  borderTopLeftRadius: "1rem",
+                  borderTopRightRadius: "1rem",
+                }}
               />
-              <div className="card-body">
-                <h5 className="card-title">{faculty.name}</h5>
-                <p className="card-text">
-                  <strong>Email:</strong> {faculty.email}<br />
-                  <strong>Contact:</strong> {faculty.contact}<br />
+              <div className="card-body text-right">
+                <h5 className="card-title fw-bold text-center" style={{ color: "#0f172a" }}>
+                  {faculty.name}
+                </h5>
+                <p className="card-text" style={{ fontSize: "0.9rem", color: "#475569" }}>
+                  <strong>Designation:</strong> {faculty.designation}<br />
                   <strong>Department:</strong> {faculty.department}<br />
-                  <strong>Designation:</strong> {faculty.designation}
+                  <strong>Email:</strong> {faculty.email}<br />
+                  <strong>Contact:</strong> {faculty.contact}
                 </p>
               </div>
             </div>

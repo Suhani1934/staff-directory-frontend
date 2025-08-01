@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Briefcase, GraduationCap, Users } from "lucide-react";
-import "./Home.css";
+import "./Home.css"; // optional for extra animations if you want
 
 export default function Home() {
   const [staff, setStaff] = useState([]);
@@ -32,7 +32,7 @@ export default function Home() {
       value: staff.length,
       icon: <Briefcase size={36} className="text-primary" />,
       link: "/faculty-directory",
-      bg: "white",
+      bg: "#e0f0ff", // Soft Blue
       shadow: "shadow-sm",
     },
     {
@@ -40,7 +40,7 @@ export default function Home() {
       value: alumniCount,
       icon: <GraduationCap size={36} className="text-success" />,
       link: "/alumni-directory",
-      bg: "white",
+      bg: "#e5f8e9", // Soft Green
       shadow: "shadow-sm",
     },
     {
@@ -48,18 +48,17 @@ export default function Home() {
       value: studentCount,
       icon: <Users size={36} className="text-info" />,
       link: "/student-directory",
-      bg: "white",
+      bg: "#f3f7ff", // Soft Indigo
       shadow: "shadow-sm",
     },
   ];
 
   return (
-    <Container fluid className="py-5 bg-light min-vh-100">
+    <Container fluid className="py-5" style={{ backgroundColor: "#f8fafc" }}>
       <div className="text-center mb-5">
-        <h2 className="fw-bold text-dark">CS Directory Overview</h2>
-        <p className="text-muted">
-          Track and manage your campus community in one place
-        </p>
+        <h2 className="fw-bold" style={{ color: "#0f172a" }}>
+          CS Department Directory Overview
+        </h2>
       </div>
 
       <Row className="g-4 justify-content-center">
@@ -68,10 +67,11 @@ export default function Home() {
             <Link to={card.link} className="text-decoration-none">
               <Card
                 className={`h-100 ${card.shadow} border-0 rounded-4 transition-card`}
+                style={{ backgroundColor: card.bg }}
               >
                 <Card.Body className="d-flex flex-column align-items-center text-center p-4">
                   <div className="mb-3">{card.icon}</div>
-                  <h5 className="mb-1 text-dark">{card.title}</h5>
+                  <h5 className="text-dark mb-1">{card.title}</h5>
                   <h3 className="fw-bold text-secondary">{card.value}</h3>
                 </Card.Body>
               </Card>

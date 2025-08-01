@@ -20,31 +20,49 @@ const AlumniDirectory = () => {
   }, []);
 
   return (
-    <div className="container mt-4">
-      <h2 className="text-center mb-4 text-primary fw-bold">Alumni Directory</h2>
-      <div className="row">
+    <div className="container py-5" style={{ backgroundColor: "#f8fafc" }}>
+      <h2 className="text-center fw-bold mb-5" style={{ color: "#1e293b" }}>
+        Alumni Directory
+      </h2>
+
+      <div className="row g-4">
         {alumniList.map((alumni) => (
-          <div className="col-md-4 mb-4" key={alumni._id}>
-            <div className="card h-100 shadow-sm">
+          <div className="col-md-6 col-lg-4" key={alumni._id}>
+            <div
+              className="card border-0 h-100 shadow-sm"
+              style={{ backgroundColor: "#ffffff", borderRadius: "1rem" }}
+            >
               <img
                 src={alumni.photo}
-                className="card-img-top"
+                className="card-img-top rounded-top"
                 alt={alumni.name}
-                style={{ height: "250px", objectFit: "cover" }}
+                style={{
+                  height: "250px",
+                  objectFit: "cover",
+                  borderTopLeftRadius: "1rem",
+                  borderTopRightRadius: "1rem",
+                }}
               />
-              <div className="card-body">
-                <h5 className="card-title">{alumni.name}</h5>
-                <p className="card-text">
+              <div className="card-body px-4 py-3">
+                <h5 className="card-title fw-bold text-center" style={{ color: "#0f172a" }}>
+                  {alumni.name}
+                </h5>
+                <p className="card-text mb-1">
                   <strong>Email:</strong> {alumni.email}
-                  <br />
+                </p>
+                <p className="card-text mb-1">
                   <strong>Mobile:</strong> {alumni.mobile}
-                  <br />
+                </p>
+                <p className="card-text mb-1">
                   <strong>Designation:</strong> {alumni.designation}
-                  <br />
+                </p>
+                <p className="card-text mb-1">
                   <strong>Company:</strong> {alumni.organization}
-                  <br />
+                </p>
+                <p className="card-text mb-1">
                   <strong>Location:</strong> {alumni.location}
-                  <br />
+                </p>
+                <p className="card-text mb-0">
                   <strong>Passed Out Year:</strong> {alumni.passedOutYear}
                 </p>
               </div>

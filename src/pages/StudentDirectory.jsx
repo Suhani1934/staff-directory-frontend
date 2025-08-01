@@ -21,7 +21,7 @@ export default function StudentDirectory() {
 
   return (
     <Container className="py-5">
-      <h2 className="text-center mb-4 text-primary fw-bold">
+      <h2 className="text-center mb-4 fw-bold" style={{ color: "#1e293b", fontSize: "2.5rem" }}>
         Student Directory
       </h2>
 
@@ -32,34 +32,27 @@ export default function StudentDirectory() {
       ) : (
         <Row className="g-4">
           {studentList.map((student) => (
-            <Col key={student._id} md={6} lg={4}>
-              <Card className="h-100 shadow-sm border-0">
+            <Col key={student._id} xs={12} sm={12} md={6} lg={4}>
+              <Card className="h-100 border-0 shadow-sm student-card">
                 <Card.Img
                   variant="top"
                   src={student.photo}
                   alt={student.name}
+                  className="rounded-top"
                   style={{ height: "250px", objectFit: "cover" }}
                 />
-                <Card.Body>
-                  <Card.Title className="fw-bold text-secondary">
+                <Card.Body className="bg-light-subtle">
+                  <Card.Title className="fw-bold text-primary mb-2 text-center">
                     {student.name}
                   </Card.Title>
-                  <Card.Text>
-                    <strong>Course:</strong> {student.course}
-                    <br />
-                    <strong>Year:</strong> {student.year}
-                    <br />
-                    <strong>Gender:</strong> {student.gender}
-                    <br />
-                    <strong>Mobile:</strong> {student.mobile}
-                    <br />
-                    <strong>Email:</strong> {student.email}
-                    <br />
-                    <strong>Area of Interest:</strong>{" "}
-                    {student.areaOfInterest.join(", ")}
-                    <br />
-                    <strong>Skills:</strong> {student.skills.join(", ")}
-                    <br />
+                  <Card.Text className="text-secondary" style={{ fontSize: "0.95rem" }}>
+                    <strong>Course:</strong> {student.course} <br />
+                    <strong>Year:</strong> {student.year} <br />
+                    <strong>Gender:</strong> {student.gender} <br />
+                    <strong>Mobile:</strong> {student.mobile} <br />
+                    <strong>Email:</strong> {student.email} <br />
+                    <strong>Interest:</strong> {student.areaOfInterest.join(", ")} <br />
+                    <strong>Skills:</strong> {student.skills.join(", ")} <br />
                     <strong>Address:</strong> {student.address}
                   </Card.Text>
                 </Card.Body>
@@ -68,6 +61,8 @@ export default function StudentDirectory() {
           ))}
         </Row>
       )}
+
+      
     </Container>
   );
 }

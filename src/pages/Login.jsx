@@ -1,9 +1,9 @@
 import { useState } from "react";
 import FacultyLogin from "../components/FacultyLogin";
 import AlumniLogin from "../components/AlumniLogin";
-import StudentLogin from "../components/StudentLogin"
+import StudentLogin from "../components/StudentLogin";
 
-const Register = () => {
+const Login = () => {
   const [userType, setUserType] = useState("");
 
   const handleSelection = (type) => {
@@ -11,40 +11,42 @@ const Register = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container py-5">
       {!userType && (
         <div className="text-center">
-          <p>Select login type:</p>
-          <button className="btn btn-primary mx-2" onClick={() => handleSelection("faculty")}>
-            Login as Faculty
-          </button>
-          <button className="btn btn-secondary mx-2" onClick={() => handleSelection("alumni")}>
-            Login as Alumni
-          </button>
-          <button className="btn btn-secondary mx-2" onClick={() => handleSelection("student")}>
-            Login as Student
-          </button>
+          <h3 className="mb-4 text-dark fw-bold">Select Login Type</h3>
+          <div className="d-grid gap-3 d-sm-flex justify-content-center">
+            <button
+              className="btn btn-primary px-4 py-2 rounded-pill shadow-sm"
+              onClick={() => handleSelection("faculty")}
+            >
+              Faculty
+            </button>
+            <button
+              className="btn btn-success px-4 py-2 rounded-pill shadow-sm"
+              onClick={() => handleSelection("alumni")}
+            >
+              Alumni
+            </button>
+            <button
+              className="btn btn-warning px-4 py-2 rounded-pill shadow-sm"
+              onClick={() => handleSelection("student")}
+            >
+              Student
+            </button>
+          </div>
         </div>
       )}
 
-      {userType === "faculty" && (
+      {userType && (
         <div className="mt-4">
-          <FacultyLogin />
-        </div>
-      )}
-
-      {userType === "alumni" && (
-        <div className="mt-4">
-          <AlumniLogin />
-        </div>
-      )}
-      {userType === "student" && (
-        <div className="mt-4">
-          <StudentLogin />
+          {userType === "faculty" && <FacultyLogin />}
+          {userType === "alumni" && <AlumniLogin />}
+          {userType === "student" && <StudentLogin />}
         </div>
       )}
     </div>
   );
 };
 
-export default Register;
+export default Login;
