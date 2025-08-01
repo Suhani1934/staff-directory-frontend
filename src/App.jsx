@@ -6,6 +6,10 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import FacultyProfile from "./pages/FacultyProfile";
 import ChangePassword from "./pages/ChangePassword";
+import AlumniLogin from "./pages/AlumniLogin";
+import AlumniRegister from "./pages/AlumniRegister";
+import FacultyDirectory from "./pages/FacultyDirectory";
+import AlumniDirectory from "./pages/AlumniDirectory";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 
@@ -21,6 +25,10 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/faculty/profile" element={<FacultyProfile />} />
           <Route path="/change-password" element={<ChangePassword />} />
+          <Route path="/alumni/login" element={<AlumniLogin />} />
+          <Route path="/alumni/register" element={<AlumniRegister />} />
+          <Route path="/faculty-directory" element={<FacultyDirectory />} />
+           <Route path="/alumni-directory" element={<AlumniDirectory />} />
         </Routes>
         {/* <Footer/> */}
       </BrowserRouter>

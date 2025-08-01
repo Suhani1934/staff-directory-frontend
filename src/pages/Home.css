@@ -35,3 +35,6 @@
 .staff-card:hover .staff-photo {
   transform: scale(1.05);
 }
+.card {
+  border-radius: 1rem;
+}
