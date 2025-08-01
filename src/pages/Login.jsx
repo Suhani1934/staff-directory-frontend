@@ -13,7 +13,7 @@ const Register = () => {
     <div className="container mt-5">
       {!userType && (
         <div className="text-center">
-          <p>Select registration type:</p>
+          <p>Select login type:</p>
           <button className="btn btn-primary mx-2" onClick={() => handleSelection("faculty")}>
             Login as Faculty
           </button>
