@@ -1,22 +1,32 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
+
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import FacultyProfile from "./pages/FacultyProfile";
-import ChangePassword from "./pages/ChangePassword";
-import AlumniLogin from "./components/AlumniLogin";
-import FacultyLogin from "./components/FacultyLogin";
-import AlumniRegister from "./components/AlumniRegister";
+
+// Register Pages
 import FacultyRegister from "./components/FacultyRegister";
+import AlumniRegister from "./components/AlumniRegister";
+import StudentRegister from "./components/StudentRegister";
+
+// Login Pages
+import FacultyLogin from "./components/FacultyLogin";
+import AlumniLogin from "./components/AlumniLogin";
+import StuentLogin from "./components/StudentLogin";
+
+// Directory Pages
 import FacultyDirectory from "./pages/FacultyDirectory";
 import AlumniDirectory from "./pages/AlumniDirectory";
-import StudentRegister from "./components/StudentRegister";
-import StuentLogin from "./components/StudentLogin";
 import StudentDirectory from "./pages/StudentDirectory";
-import { ToastContainer } from "react-toastify";
-import "./App.css";
+
+//  Profile Pages
+import FacultyProfile from "./pages/FacultyProfile";
+
+import ChangePassword from "./pages/ChangePassword";
 
 export default function App() {
   return (

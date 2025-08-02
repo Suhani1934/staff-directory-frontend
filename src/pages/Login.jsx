@@ -1,50 +1,58 @@
-import { useState } from "react";
-import FacultyLogin from "../components/FacultyLogin";
-import AlumniLogin from "../components/AlumniLogin";
-import StudentLogin from "../components/StudentLogin";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const [userType, setUserType] = useState("");
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
 
-  const handleSelection = (type) => {
-    setUserType(type);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("https://your-backend-url/api/auth/login", formData);
+      const { token, role } = res.data;
+
+      localStorage.setItem("token", token);
+      toast.success("Login successful!");
+
+      // 🔄 Redirect based on role
+      if (role === "faculty") navigate("/faculty/profile");
+      else if (role === "alumni") navigate("/alumni/profile");
+      else if (role === "student") navigate("/student/profile");
+      else toast.error("Unknown role");
+    } catch (err) {
+      console.log(err);
+      toast.error("Login failed!");
+    }
   };
 
   return (
-    <div className="container py-5">
-      {!userType && (
-        <div className="text-center">
-          <h3 className="mb-4 text-dark fw-bold">Select Login Type</h3>
-          <div className="d-grid gap-3 d-sm-flex justify-content-center">
-            <button
-              className="btn btn-primary px-4 py-2 rounded-pill shadow-sm"
-              onClick={() => handleSelection("faculty")}
-            >
-              Faculty
-            </button>
-            <button
-              className="btn btn-success px-4 py-2 rounded-pill shadow-sm"
-              onClick={() => handleSelection("alumni")}
-            >
-              Alumni
-            </button>
-            <button
-              className="btn btn-warning px-4 py-2 rounded-pill shadow-sm"
-              onClick={() => handleSelection("student")}
-            >
-              Student
-            </button>
-          </div>
-        </div>
-      )}
-
-      {userType && (
-        <div className="mt-4">
-          {userType === "faculty" && <FacultyLogin />}
-          {userType === "alumni" && <AlumniLogin />}
-          {userType === "student" && <StudentLogin />}
-        </div>
-      )}
+    <div className="container mt-5">
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          className="form-control mb-2"
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          className="form-control mb-3"
+          onChange={handleChange}
+          required
+        />
+        <button type="submit" className="btn btn-primary w-100">Login</button>
+      </form>
     </div>
   );
 };
