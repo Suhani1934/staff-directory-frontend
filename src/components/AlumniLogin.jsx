@@ -18,7 +18,9 @@ export default function AlumniLogin() {
         `${import.meta.env.VITE_API_BASE_URL}alumni/login`,
         form
       );
-      localStorage.setItem("token", res.data.token);
+
+      localStorage.setItem("user", JSON.stringify(res.data));
+
       toast.success("Login successful!");
       navigate("/");
     } catch (err) {

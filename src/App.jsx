@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -57,6 +56,9 @@ export default function App() {
 
           {/* Profile Pages */}
           <Route path="/faculty/profile" element={<FacultyProfile />} />
+          {/* <Route path="/alumni/profile" element={<AlumniProfile />} /> */}
+          {/* <Route path="/student/profile" element={<StudentProfile />} /> */}
+          
           <Route path="/change-password" element={<ChangePassword />} />
         </Routes>
         {/* <Footer/> */}
