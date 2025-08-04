@@ -21,7 +21,10 @@ export default function StudentDirectory() {
 
   return (
     <Container className="py-5">
-      <h2 className="text-center mb-4 fw-bold" style={{ color: "#1e293b", fontSize: "2.5rem" }}>
+      <h2
+        className="text-center mb-4 fw-bold"
+        style={{ color: "#1e293b", fontSize: "2.5rem" }}
+      >
         Student Directory
       </h2>
 
@@ -45,13 +48,17 @@ export default function StudentDirectory() {
                   <Card.Title className="fw-bold text-primary mb-2 text-center">
                     {student.name}
                   </Card.Title>
-                  <Card.Text className="text-secondary" style={{ fontSize: "0.95rem" }}>
+                  <Card.Text
+                    className="text-secondary"
+                    style={{ fontSize: "0.95rem" }}
+                  >
                     <strong>Course:</strong> {student.course} <br />
                     <strong>Year:</strong> {student.year} <br />
                     <strong>Gender:</strong> {student.gender} <br />
                     <strong>Mobile:</strong> {student.mobile} <br />
                     <strong>Email:</strong> {student.email} <br />
-                    <strong>Interest:</strong> {student.areaOfInterest.join(", ")} <br />
+                    <strong>Interest:</strong>{" "}
+                    {student.areaOfInterest.join(", ")} <br />
                     <strong>Skills:</strong> {student.skills.join(", ")} <br />
                     <strong>Address:</strong> {student.address}
                   </Card.Text>
@@ -61,8 +68,6 @@ export default function StudentDirectory() {
           ))}
         </Row>
       )}
-
-      
     </Container>
   );
 }
